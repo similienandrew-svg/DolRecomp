@@ -124,3 +124,9 @@ jobs:
         if: runner.os == 'Windows'
         shell: msys2 {0}
         run: ctest --test-dir build --output-on-failure
+
+        - name: Upload Entire Build Folder Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DolRecomp-Complete-Build-Directory
+          path: build-llvm/
